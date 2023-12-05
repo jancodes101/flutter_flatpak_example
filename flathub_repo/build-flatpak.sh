@@ -25,6 +25,9 @@ tar -xf $projectName-Linux-Portable.tar.gz -C $projectName
 
 # Copy the portable app to the Flatpak-based location.
 cp -r $projectName /app/
+find /app/ -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+ls -la /app/$projectName
+ls -la /app/$projectName/$executableName
 chmod +x /app/$projectName/$executableName
 mkdir -p /app/bin
 ln -s /app/$projectName/$executableName /app/bin/$executableName
