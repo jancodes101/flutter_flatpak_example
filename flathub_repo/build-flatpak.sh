@@ -21,7 +21,7 @@ executableName=flutter_flatpak_example
 
 # Extract portable Flutter build.
 mkdir -p $projectName
-tar -xf --no-same-owner $projectName-Linux-Portable.tar.gz -C $projectName
+tar --no-same-owner -xf $projectName-Linux-Portable.tar.gz -C $projectName
 
 # Copy the portable app to the Flatpak-based location.
 cp -r $projectName /app/
